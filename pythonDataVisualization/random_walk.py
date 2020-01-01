@@ -1,3 +1,4 @@
+#15-5
 from random import choice
 
 class RandomWalk():
@@ -13,11 +14,14 @@ class RandomWalk():
         self.x_values = [0]
         self.y_values = [0]
 
+    #看看改动数据有何影响
     def get_step(self):
-        direction = choice([1,-1])
-        distance = choice([0,1,2,3,4])
+        #direction = choice([1,-1])
+        direction = choice([1])
+        distance = choice([0,1,2,3,4,5])
         step = direction*distance
         return step
+
     def fill_walk(self):
         #"计算随机漫步包含的所有点"
 
@@ -39,6 +43,8 @@ class RandomWalk():
         #    y_direction = choice([1,-1])
         #    y_distance = choice([0,1,2,3,4])
         #    y_step = y_direction*y_distance
+
+
         while len(self.x_values)<self.num_points:
             x_step = self.get_step()
             y_step = self.get_step()
